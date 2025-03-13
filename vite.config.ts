@@ -5,7 +5,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000, // Replace with your desired port number
-    strictPort: true, // Exit if port is already in use
+    // port: 3000, // Replace with your desired port number
+    // strictPort: true, // Exit if port is already in use
+    proxy: {
+      "/api": {
+        target: "https://cvpipeline2.up.railway.app:8080",
+        changeOrigin: true,
+        secure: true,
+      },
+    },
   },
 });

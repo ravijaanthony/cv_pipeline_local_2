@@ -18,6 +18,7 @@ const PORT = 5000;
 app.use(cors({
     origin: "https://cv-pipeline-local-2.vercel.app",
     methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
 app.use(bodyParser.json());

@@ -15,6 +15,7 @@ function App() {
       await axios.post(`https://cvpipeline2.up.railway.app:8080/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          "Accept": "application/json",
         },
       });
       console.log("File sent:", file);
