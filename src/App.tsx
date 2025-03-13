@@ -5,14 +5,14 @@ import "./App.css";
 
 function App() {
   const [messages, setMessages] = useState<string[]>([]);
-  const nodeServerUrl  = import.meta.env.NODE_SERVER_URL;
+  const nodeServerPort  = import.meta.env.PORT;
 
   // Function to send the dropped/selected file to the backend
   const sendToBackend = async (file: File) => {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      await axios.post(`https://cvpipeline2.up.railway.app/upload`, formData, {
+      await axios.post(`https://cvpipeline2.up.railway.app${nodeServerPort}/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Accept": "application/json",
