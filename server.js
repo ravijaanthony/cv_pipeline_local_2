@@ -15,15 +15,17 @@ import schedule from "node-schedule";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Allow preflight OPTIONS request for all routes
-app.options("*", cors());
+
 
 app.use(cors({
     origin: "https://cv-pipeline-local-2.vercel.app",
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
+
+// Allow preflight OPTIONS request for all routes
+app.options("*", cors());
 
 app.use(bodyParser.json());
 

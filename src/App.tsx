@@ -12,7 +12,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      await axios.post(`https://cvpipeline2.up.railway.app:8080/upload`, formData, {
+      await axios.post(`https://cvpipeline2.up.railway.app/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Accept": "application/json",
