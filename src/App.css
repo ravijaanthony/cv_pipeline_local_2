@@ -1,0 +1,112 @@
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* App container: blue background with centered content */
+.app-container {
+  background-color: #81a4cd;  /* background */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* White box styling for the upload area */
+.drag-drop-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.drop-zone {
+  background: #E7E7E7;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: border 0.2s ease-in-out;
+}
+
+/* Optional: when drag is active highlight the border */
+.drop-zone.active {
+  border: 2px dashed #3f51b5;
+}
+
+/* Style for file select button */
+.file-select-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #3e7cb1;
+  color: #dbe4ee;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.file-select-button:hover {
+  background-color: #054a91;
+}
+
+/* Placeholder for the upload icon */
+.upload-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background: url('./assets/upload-icon.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* Text below the button */
+.drag-text {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.message-box {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.message {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 3px;
+  color: #555555;
+}
+
+/* .message:nth-child(odd) {
+  background-color: #e9f7ef;
+}
+
+.message:nth-child(even) {
+  background-color: #f1f1f1;
+} */
