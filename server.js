@@ -15,19 +15,7 @@ import schedule from "node-schedule";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-
-app.use(cors({
-    // origin: "https://cv-pipeline-local-2.vercel.app",
-    origin: "https://cvpipeline-backend.up.railway.app",
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-}));
-
-// Allow preflight OPTIONS request for all routes
-app.options("*", cors());
-
+app.use(cors());
 app.use(bodyParser.json());
 
 // Use memory storage so that we can work directly with the file buffer
@@ -357,8 +345,6 @@ app.get("/cv", async (req, res) => {
 app.get("/", (req, res) => {
     res.send("Welcome to the CV Pipeline API");
 });
-
-app.use(express.static(path.join(__dirname, "dist")));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
