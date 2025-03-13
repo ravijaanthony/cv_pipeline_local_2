@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const [messages, setMessages] = useState<string[]>([]);
-  const nodeServerPort  = import.meta.env.PORT;
+  const nodeServerPort = import.meta.env.PORT;
 
   // Function to send the dropped/selected file to the backend
   const sendToBackend = async (file: File) => {
@@ -29,7 +29,7 @@ function App() {
       console.error("Error sending file:", error);
       setMessages((prevMessages) => [
         ...prevMessages,
-        `Error uploading ${file.name}: ${error}, ${nodeServerUrl}`
+        `Error uploading ${file.name}: ${error}, ${nodeServerPort}`
       ]);
     }
   };
