@@ -358,6 +358,8 @@ app.get("/", (req, res) => {
     res.send("Welcome to the CV Pipeline API");
 });
 
+app.use(express.static(path.join(__dirname, "dist")));
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 export default app;
