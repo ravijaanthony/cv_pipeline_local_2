@@ -15,7 +15,11 @@ import schedule from "node-schedule";
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+app.use(cors({
+    origin: "https://cv-pipeline-local-2.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true
+}));
 app.use(bodyParser.json());
 
 // Use memory storage so that we can work directly with the file buffer
