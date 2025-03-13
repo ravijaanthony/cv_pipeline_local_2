@@ -17,6 +17,7 @@ function App() {
           "Content-Type": "multipart/form-data",
           "Accept": "application/json",
         },
+        withCredentials: true,
       });
       console.log("File sent:", file);
 
