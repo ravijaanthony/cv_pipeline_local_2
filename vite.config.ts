@@ -9,7 +9,7 @@ export default defineConfig({
     // strictPort: true, // Exit if port is already in use
     proxy: {
       "/api": {
-        target: "https://cvpipeline2.up.railway.app:8080",
+        target: "http://localhost:5000",
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, '')
