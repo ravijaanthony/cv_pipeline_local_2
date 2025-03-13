@@ -12,6 +12,7 @@ export default defineConfig({
         target: "https://cvpipeline2.up.railway.app:8080",
         changeOrigin: true,
         secure: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       },
     },
   },

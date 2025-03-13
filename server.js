@@ -18,7 +18,8 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(cors({
-    origin: "https://cv-pipeline-local-2.vercel.app",
+    // origin: "https://cv-pipeline-local-2.vercel.app",
+    origin: "https://cvpipeline-backend.up.railway.app",
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
