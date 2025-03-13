@@ -15,12 +15,16 @@ import schedule from "node-schedule";
 const app = express();
 const PORT = 5000;
 
+// Allow preflight OPTIONS request for all routes
+app.options("*", cors());
+
 app.use(cors({
     origin: "https://cv-pipeline-local-2.vercel.app",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
+
 app.use(bodyParser.json());
 
 // Use memory storage so that we can work directly with the file buffer
